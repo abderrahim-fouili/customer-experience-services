@@ -24,7 +24,7 @@ public class ClientCase {
                 private String name;
 
                 @JsonIgnoreProperties({"clientCase"})
-                @OneToMany(mappedBy = "clientCase", fetch = FetchType.LAZY)
+                @OneToMany(mappedBy = "clientCase", fetch = FetchType.EAGER)
                 private List<Message> messages;
 
                 @Column(name = "client_reference")
