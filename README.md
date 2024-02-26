@@ -23,6 +23,8 @@ Two possible options :
 - A link to a Gitrepository: Githubor Gitlab, with possibility to be cloned.
 The application should be run with the command line “java –jar <package name >.jar” (like a Spring Boot web application).
 
+# ER- Diagram
+![image](https://github.com/abderrahim-fouili/customer-experience-services/assets/117549346/49e0072a-789a-4958-8eee-9caea9e5ecc0)
 
 # Project Structure:
 
@@ -75,7 +77,7 @@ http://localhost:8080/swagger-ui/index.html
 - 1- Create a message from “JérémieDurand” with the following content: “Hello, I have an issue with my new phone”.
 
 ```
- POST : /v1/customer-experience/services/messages/add-message
+> POST : /v1/customer-experience/services/messages/add-message
 
 - Request body
 {
@@ -98,7 +100,7 @@ http://localhost:8080/swagger-ui/index.html
 - 2- Create a client case, with the client name “JérémieDurand”, and having the previously created message in its messages list.
 
 ```
-POST /v1/customer-experience/services/client-cases/add-client-case
+> POST /v1/customer-experience/services/client-cases/add-client-case
 
 - Request body
 {
@@ -126,7 +128,7 @@ POST /v1/customer-experience/services/client-cases/add-client-case
 - 3- Create a message from “Sonia Valentin”, with the following content: “I am Sonia, and I will do my best to help you. What is your phone brand and model?”. This message will be linked to the previously created client case.
 
 ```
-POST /v1/customer-experience/services/messages/add-message
+> POST /v1/customer-experience/services/messages/add-message
 
 - Request body
 {
@@ -159,7 +161,7 @@ POST /v1/customer-experience/services/messages/add-message
 }
 ]
 
-PATCH /v1/customer-experience/services/client-cases/{clientCaseId}/add-message/{messageId}
+> PATCH /v1/customer-experience/services/client-cases/{clientCaseId}/add-message/{messageId}
 
 - Parameters =>  clientCaseId : 1 & messageId : 2
 
@@ -192,7 +194,7 @@ PATCH /v1/customer-experience/services/client-cases/{clientCaseId}/add-message/{
 - 4- Modification of the client case adding the client reference “KA-18B6”. This will validate the client case modification feature.
 
 ```
-PATCH /v1/customer-experience/services/client-cases/update-client-case/{clientCaseId}
+> PATCH /v1/customer-experience/services/client-cases/update-client-case/{clientCaseId}
 
 - Parameters =>  clientCaseId : 1
 
@@ -230,7 +232,7 @@ PATCH /v1/customer-experience/services/client-cases/update-client-case/{clientCa
 - 5- Fetching of all client cases. The result will only contains one client case, the one we created before.
 
 ```
-GET /v1/customer-experience/services/client-cases
+> GET /v1/customer-experience/services/client-cases
 
 - Response body
 [
